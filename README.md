@@ -19,6 +19,6 @@ Adding it as shared service in the frontcontroller.
     return $flashmessage;
 });`
 
-From the package Copy the css file: frjf14/cflashmessage/src/css/flashmessage.css to the webroot css folder: webroot/css/ the add the css to the frontcontroller `$app->theme->addStylesheet('css/flashmessage.css');`
+From the package Copy the css file: frjf14/cflashmessage/src/css/flashmessage.css to the webroot css folder: webroot/css/ then add the css to the frontcontroller `$app->theme->addStylesheet('css/flashmessage.css');` or just link directly to the CSS file within the package `$app->theme->addStylesheet('../vendor/frjf14/cflashmessage/src/css/flashmessage.css');`
 
 Now you can add flash messages as an example error message: `$app->flashmessage->addError('An error message.');` and to display the message use `$app->flashmessage->getFlashMessages();` to retrive the message(s) as html.

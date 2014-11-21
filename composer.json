@@ -1,0 +1,19 @@
+{
+    "name": "frjf14/cflashmessage",
+    "type": "library",
+    "description": "Class for flash messages.",
+    "keywords": ["flash", "message", "flashmessage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fredrik Johansson",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "frjf14\\": "src/" }
+    }
+}

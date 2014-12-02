@@ -13,9 +13,8 @@ How to use flash messages
 
 Adding it as shared service in the frontcontroller.
 
-`$di->setShared('flashmessage', function() use ($di) {
+`$di->setShared('flashmessage', function() {
     $flashmessage = new \frjf14\FlashMessage\CFlashMessage();
-    $flashmessage->setDI($di);
     return $flashmessage;
 });`
 

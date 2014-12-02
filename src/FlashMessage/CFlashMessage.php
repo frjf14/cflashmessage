@@ -4,11 +4,21 @@ namespace frjf14\FlashMessage;
 
 class CFlashMessage
 {
-    use \Anax\DI\TInjectable;
+    public function __construct() {
+
+        if (session_status() == PHP_SESSION_NONE) {
+
+            session_start();
+        }
+    }
 
     private function addMessage($message, $type) {
 
-        $flashMessages = $this->session->get('flashmessages');
+
+        if(isset($_SESSION['flashmessages'])){
+
+            $flashMessages = $_SESSION['flashmessages'];
+        }
 
         $flashMessage = [
             'message' => $message,
@@ -17,7 +27,7 @@ class CFlashMessage
 
         $flashMessages[] = $flashMessage;
 
-        $this->session->set('flashmessages', $flashMessages);
+        $_SESSION['flashmessages'] = $flashMessages;
     }
 
     public function addError($message) {
@@ -40,26 +50,27 @@ class CFlashMessage
         $this->addMessage($message, 'warning');
     }
 
-    public function deleteMessages() {
+    private function deleteMessages() {
 
-        $this->session->set('flashmessages', []);
+        $_SESSION['flashmessages'] = null;
     }
 
     public function getFlashMessages() {
 
-        $messages = $this->session->get('flashmessages');
+        if(isset($_SESSION['flashmessages'])){
 
-        $html = "";
+            $messages = $_SESSION['flashmessages'];
 
-        foreach ($messages as $message) {
+            $html = "";
 
-            $html .= "<div id='flashMessage' class='" . $message['type'] . "'>" . $message['message'] . "</div>";
+            foreach ($messages as $message) {
+
+                $html .= "<div id='flashMessage' class='" . $message['type'] . "'>" . $message['message'] . "</div>";
+            }
+
+            $this->deleteMessages();
+
+            return $html;
         }
-
-        $this->deleteMessages();
-
-        return $html;
     }
 }
-
-

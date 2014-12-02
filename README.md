@@ -1,7 +1,7 @@
 Flash messages - Anax MVC
 =========================
 
-cflashmessage handles error, success, notice and warning messages, which can be used to give the user feedback.
+cflashmessage handles error, success, notice and warning messages, which can be used to give the user feedback. :)
 
 License
 -------

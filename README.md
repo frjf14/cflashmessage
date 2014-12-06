@@ -1,7 +1,11 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/frjf14/cflashmessage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/frjf14/cflashmessage/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/frjf14/cflashmessage/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/frjf14/cflashmessage/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/frjf14/cflashmessage/badges/build.png?b=master)](https://scrutinizer-ci.com/g/frjf14/cflashmessage/build-status/master)
+
 Flash messages - Anax MVC
 =========================
 
-cflashmessage handles error, success, notice and warning messages, which can be used to give the user feedback. :)
+cflashmessage handles error, success, notice and warning messages, which can be used to give the user feedback.
 
 License
 -------
